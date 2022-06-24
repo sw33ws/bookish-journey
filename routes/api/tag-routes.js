@@ -37,7 +37,7 @@ router.get('/:id', (req, res) => {
 });
 
 router.post('/', (req, res) => {
-  // create a new category
+  // create a new Tag
   Tag.create({
     tag_name: req.body.tag_name
   })
