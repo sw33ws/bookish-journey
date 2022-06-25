@@ -5,7 +5,7 @@ const { Tag, Product, ProductTag } = require('../../models');
 
 router.get('/', (req, res) => {
   // find all tags
-  Category.findAll({
+  Tag.findAll({
     attributes: ['id', 'tag_name'],
     include: [{
       model: Product,
@@ -21,7 +21,7 @@ router.get('/', (req, res) => {
 
 router.get('/:id', (req, res) => {
   // find a single tag by its `id`
-  Category.findOne({
+  Tag.findOne({
     where: {id: req.params.id},
     attributes: ['id', 'Tag_name'],
     include: [{
@@ -71,7 +71,7 @@ router.put('/:id', (req, res) => {
 
 router.delete('/:id', (req, res) => {
   // delete on tag by its `id` value
-  Category.destory({
+  Tag.destory({
     where: {id: req.params.id}
   })
   .then(dbTag => {
